@@ -9,7 +9,7 @@ use std::process::ExitCode;
 
 fn build_cli() -> Command {
     Command::new("check-claude")
-        .version("0.1.0")
+        .version(env!("CARGO_PKG_VERSION"))
         .about("Diagnostic CLI to verify whether your network and environment are in a Claude-supported region")
         .arg(
             Arg::new("json")
