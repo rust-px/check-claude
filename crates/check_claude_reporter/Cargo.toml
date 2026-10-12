@@ -4,6 +4,8 @@ version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
+description = "Terminal console and JSON report formatting implementations for check_claude"
+repository.workspace = true
 
 [dependencies]
 check_claude_core = { workspace = true }

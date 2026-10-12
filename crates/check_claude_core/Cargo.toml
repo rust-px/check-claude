@@ -4,6 +4,8 @@ version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
+description = "Core domain types, context, and check interfaces for check_claude"
+repository.workspace = true
 
 [dependencies]
 thiserror = { workspace = true }
