@@ -1,0 +1,16 @@
+[package]
+name = "check_claude_reporter"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+check_claude_core = { workspace = true }
+colored = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

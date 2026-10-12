@@ -1,0 +1,19 @@
+[package]
+name = "check_claude_rules"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+check_claude_core = { workspace = true }
+thiserror = { workspace = true }
+derive_more = { workspace = true }
+getset = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+ureq = { workspace = true }
+if-addrs = { workspace = true }
+
+[lints]
+workspace = true

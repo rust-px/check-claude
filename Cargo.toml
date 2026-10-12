@@ -1,0 +1,73 @@
+[workspace]
+members = [
+    "apps/check_claude",
+    "crates/check_claude_core",
+    "crates/check_claude_rules",
+    "crates/check_claude_reporter",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+authors = ["Claude Check Maintainers"]
+description = "Diagnostic CLI tool to verify network and region eligibility for Claude"
+license = "MIT OR Apache-2.0"
+
+[profile.dev]
+codegen-backend = "cranelift"
+opt-level = 1
+
+[profile.dev.package."*"]
+codegen-backend = "llvm"
+opt-level = 3
+
+[profile.release]
+strip = true
+codegen-units = 1
+opt-level = 3
+lto = "thin"
+panic = "abort"
+
+[workspace.lints.rust]
+unused_imports = "allow"
+unused_variables = "allow"
+dead_code = "allow"
+unused_must_use = "deny"
+
+[workspace.lints.clippy]
+almost_complete_range = "allow"
+arc_with_non_send_sync = "allow"
+borrowed_box = "allow"
+dbg_macro = "deny"
+let_underscore_future = "allow"
+manual_is_multiple_of = "allow"
+map_entry = "allow"
+non_canonical_partial_ord_impl = "allow"
+reversed_empty_ranges = "allow"
+single_range_in_vec_init = "allow"
+style = { level = "allow", priority = -1 }
+todo = "deny"
+type_complexity = "allow"
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+
+[workspace.lints.cargo]
+unused_dependencies = "allow"
+unused_workspace_dependencies = "allow"
+
+[workspace.dependencies]
+check_claude_core = { path = "crates/check_claude_core" }
+check_claude_rules = { path = "crates/check_claude_rules" }
+check_claude_reporter = { path = "crates/check_claude_reporter" }
+
+clap = { version = "4.6.6", default-features = true }
+colored = { version = "3.1.1" }
+derive_more = { version = "2.1.1", features = ["deref"] }
+getset = { version = "0.1.7" }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.151" }
+thiserror = { version = "2.0.20" }
+ureq = { version = "2.10.1", default-features = false, features = ["tls", "json"] }
+if-addrs = { version = "0.15.0" }
