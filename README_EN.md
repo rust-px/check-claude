@@ -85,25 +85,53 @@ Developers and teams using **Claude Code**, the **Claude Web Interface (claude.a
 
 ## Installation & Build
 
-### Prerequisites
-- Rust toolchain installed (compatible with the Rust 2024 Edition, managed via `rustup`).
+### 1. One-line Installation via Cargo (Recommended)
 
-### 1. Install from Source via Cargo
+If you already have a Rust environment configured, install globally using `cargo install`:
+
+```bash
+# Install check_claude globally
+cargo install check_claude
+
+# Run directly after installation
+check_claude
+```
+
+> [!TIP]
+> **Don't have Rust installed?**
+>
+> If Rust or the `cargo` command is not available on your system, install the official toolchain from the [official Rust website](https://www.rust-lang.org/) or [rustup.rs](https://rustup.rs/):
+>
+> - **Linux / macOS**:
+>   ```bash
+>   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+>   # Reload your shell environment (or restart your terminal):
+>   source "$HOME/.cargo/env"
+>   ```
+> - **Windows**:
+>   Visit the [Rust Getting Started Guide](https://www.rust-lang.org/learn/get-started) to download and run `rustup-init.exe`, following the default prompts.
+>
+> Once installed, restart your terminal and run `cargo install check_claude`.
+
+### 2. Install from Source via Cargo
+
 ```bash
 git clone https://github.com/rust-px/check-claude.git
 cd check-claude
 cargo install --path apps/check_claude
 ```
-Once installed, run `check-claude` directly from anywhere in your shell.
+Once installed, run `check_claude` directly from anywhere in your shell.
 
-### 2. Build Release Binary
+### 3. Build Release Binary
+
 ```bash
 cargo build --release
 # Executable located at: ./target/release/check_claude
 ./target/release/check_claude --help
 ```
 
-### 3. Run Directly in Workspace
+### 4. Run Directly in Workspace
+
 ```bash
 cargo run -p check_claude
 ```

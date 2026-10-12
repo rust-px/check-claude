@@ -9,11 +9,12 @@ resolver = "2"
 
 [workspace.package]
 edition = "2024"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Claude Check Maintainers"]
 description = "Diagnostic CLI tool to verify network and region eligibility for Claude"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/rust-px/check-claude"
+readme = "README.md"
 [profile.dev]
 codegen-backend = "cranelift"
 opt-level = 1

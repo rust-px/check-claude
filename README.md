@@ -87,25 +87,53 @@
 
 ## 安装与构建 (Installation & Build)
 
-### 前置条件
-- 已安装 Rust 工具链（推荐最新稳定版或 2024 Edition 支持的编译器，支持 `rustup`）。
+### 1. 一键安装与运行 (推荐)
 
-### 1. 从源码安装至系统 PATH
+如果你已配置好 Rust 环境，推荐直接通过 `cargo install` 全局安装：
+
+```bash
+# 全局安装 check_claude 二进制
+cargo install check_claude
+
+# 安装完成后直接运行
+check_claude
+```
+
+> [!TIP]
+> **没有 Rust 环境？**
+>
+> 如果系统中尚未安装 Rust 或找不到 `cargo` 命令，请先前往 [Rust 官方网站](https://www.rust-lang.org/) 或 [rustup.rs](https://rustup.rs/) 安装官方工具链：
+>
+> - **Linux / macOS**：
+>   ```bash
+>   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+>   # 安装完成后重载环境变量（或重启终端）：
+>   source "$HOME/.cargo/env"
+>   ```
+> - **Windows**：
+>   前往 [Rust 官网安装引导页面](https://www.rust-lang.org/learn/get-started) 下载并运行 `rustup-init.exe`，按默认选项完成安装。
+>
+> 安装完成后重新打开终端，即可执行 `cargo install check_claude`。
+
+### 2. 从源码安装至系统 PATH
+
 ```bash
 git clone https://github.com/rust-px/check-claude.git
 cd check-claude
 cargo install --path apps/check_claude
 ```
-安装完成后，即可在任意终端路径下直接调用 `check-claude`。
+安装完成后，即可在任意终端路径下直接调用 `check_claude`。
 
-### 2. 本地直接编译 Release 版本
+### 3. 本地直接编译 Release 版本
+
 ```bash
 cargo build --release
 # 二进制生成于 ./target/release/check_claude
 ./target/release/check_claude --help
 ```
 
-### 3. 开发环境即时运行
+### 4. 开发环境即时运行
+
 ```bash
 cargo run -p check_claude
 ```
