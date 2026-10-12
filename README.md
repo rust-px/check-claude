@@ -92,7 +92,7 @@
 
 ### 1. 从源码安装至系统 PATH
 ```bash
-git clone https://github.com/your-username/check-claude.git
+git clone https://github.com/rust-px/check-claude.git
 cd check-claude
 cargo install --path apps/check_claude
 ```
